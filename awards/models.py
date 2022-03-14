@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Profile(models.Model):
     profile_picture = models.ImageField(upload_to='images/',blank=True)
@@ -29,7 +29,7 @@ class Project(models.Model):
     details = models.TextField()
     link = models.CharField(max_length=100)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-    image = models.ImageField(upload_to='project_images',blank=True)
+    image = CloudinaryField('image')
     user_project_id = models.IntegerField(default=0)
     design = models.IntegerField(choices=list(zip(range(0, 11), range(0, 11))), default=0)
     usability = models.IntegerField(choices=list(zip(range(0, 11), range(0, 11))), default=0)

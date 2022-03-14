@@ -7,7 +7,7 @@ from . import views
 urlpatterns=[
     path('',views.home,name='home'),
     # url(r'^new/project$',views.new_project,name='new-project'),
-    # url(r'^project/review/(\d+)',views.project_review,name='project_review'),
+    path('project/review/(\d+)',views.project_review,name='project_review'),
     # url(r'^search/',views.search_project, name='search_results'),
     # url(r'^profile/$',views.profile,name='profile'),
     # url(r'^new_profile/$',views.new_profile,name = 'new_profile'),

@@ -57,4 +57,4 @@ class ProjectsTestClass(TestCase):
     def test_find_project(self):
         self.new_project.save_project()
         project = Project.get_single_project(self.new_project.id)
-        self.assertTrue(project == self.new_project)
+        self.assertTrue(project = self.new_project)

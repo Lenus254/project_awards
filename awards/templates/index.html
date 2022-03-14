@@ -8,23 +8,23 @@
             {% for image in all_images%}
     
             <div class="col-md-4 main-page d-flex" style=" margin-top: 5px;">
-                <div class="card card-cascade wider flex-fill ">
+                <div class="card card-cascade wider flex-fill " style="height: 400px;">
     
                     <!-- Card image -->
-                    <div class="view view-cascade overlay">
+                    <div class="view view-cascade overlay" >
                         <a data-toggle="modal" data-target="#{{image.id}}"><img class="card-img-top"
-                                src="{{image.image.url}}" alt="{{image.title}}"></a>
+                                src="{{image.image.url}}" alt="{{image.title}}" style="height: 250px;"></a>
                     </div>
                     <!--Card content-->
                     <div class="card-body">
     
                         <!--Title-->
-                        <h4 class="card-title">{{image.title}}</h4>
+                        <h4 class="card-title text-center">{{image.title}}</h4>
                         <!--Text-->
-                        <p class="card-text">{{image.details}}</p>
-                        <p><a href="{{image.link}}">Live Project Link</a></p>                    
+                        <p class="card-text text-center">{{image.details}}</p>
+                        <p class="text-center"><a href="{{image.link}}">Live Project Link</a></p>                    
                         
-                        <a href="{% url 'project_review' image.id %}" class="btn btn-INFO btn-md">Review Project</a>
+                        <a href="{% url 'project_review' image.id %}" class="btn btn-INFO btn-md" style="margin-left: 100px; margin-bottom: 20px;">Review Project</a>
     
                     </div>
                 </div>

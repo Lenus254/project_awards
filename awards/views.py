@@ -42,3 +42,42 @@ def project_review(request,project_id):
     return render(request,'project_review.html',{"vote_form":vote_form,"single_project":single_project,"average_score":average_score})   
 
    
+def search_project(request):
+    if 'project' in request.GET and request.GET ["project"]:
+        search_term = request.GET.get("project")
+        searched_projects = Project.search_project_by_title(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search.html', {"message":message, "projects":searched_projects})
+
+    else:
+        message = "No search results yet!"
+        return render (request, 'search.html', {"message": message})  
+    
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            user_image = form.save(commit=False)
+            user_image.user = current_user
+            user_image.save()
+        return redirect('home')
+    else:
+        form = ProjectForm()
+    return render(request,"new_project.html",{"form":form}) 
+
+
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    projects = Project.objects.filter(user = current_user)
+
+      
+    prof = Profile.objects.get(prof_user=current_user)
+    
+    if(prof):
+        return redirect('new_profile')
+
+    return render(request,'profile.html',{'profile':prof,'projects':projects})  

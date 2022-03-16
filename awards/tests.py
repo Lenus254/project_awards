@@ -55,6 +55,6 @@ class ProjectsTestClass(TestCase):
         self.assertTrue(len(projects)>0)
 
     def test_find_project(self):
-        self.new_project.save_project()
+        self.new_project.sve_project()
         project = Project.get_single_project(self.new_project.id)
         self.assertTrue(project = self.new_project)

@@ -30,14 +30,14 @@
           <p class="card-text">{{project.details}}</p>
           <p><a href="{{project.link}}">Live Project Link</a></p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-          <button type="button" class="btn btn-danger btn-md">Review</button>
+          <button type="button" class="btn btn-danger btn-md"><a href="{% url 'project_review'  %}" >Review</a></button>
 
         </div>
       </div>
     </div>
     {% empty %}
     <div class="row">
-      <h1 class="text-center"> No Images Yet</h1>
+      <h1 class="text-center"> No previews</h1>
     </div>
     {% endfor %}
   </div>

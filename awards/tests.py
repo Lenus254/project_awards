@@ -44,7 +44,7 @@ class ProjectsTestClass(TestCase):
         projects = Project.objects.all()
         self.assertTrue(len(projects)>0)
 
-    def test_delete_prfile(self):
+    def test_delete_profile(self):
         self.new_project.delete_project()
         projects = Project.objects.all()
         self.assertTrue(len(projects)==0)

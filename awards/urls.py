@@ -13,8 +13,8 @@ urlpatterns=[
     path('profile/',views.profile,name='profile'),
     path('new_profile/',views.new_profile,name = 'new_profile'),
     path('edit/profile/',views.profile_edit,name = 'edit_profile'),
-    # url(r'^api/profile/$', views.ProfileList.as_view()),
-    # url(r'^api/projects/$', views.ProjectList.as_view()),
+    path('api/profile/', views.ProfileList.as_view()),
+    path('api/projects/', views.ProjectList.as_view()),
 ]
 
 if settings.DEBUG:

@@ -115,3 +115,16 @@ def profile_edit(request):
         form = ProfileForm()
     return render(request,'edit_profile.html',{'form':form})
 
+class ProjectList(APIView):
+    def fetch(self, request,format=None):
+        projects=Project.objects.all()
+        serializers=ProjectSerializer(projects, many=True)
+        return Response(serializers.data)
+    
+class ProfileList(APIView):
+    def fetch(self, request,format=None):
+        all_profiles=Profile.objects.all()
+        serializers=ProfileSerializer( all_profiles, many=True)
+        return Response(serializers.data)
+
+

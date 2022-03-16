@@ -14,7 +14,7 @@ urlpatterns=[
     path('new_profile/',views.new_profile,name = 'new_profile'),
     path('edit/profile/',views.profile_edit,name = 'edit_profile'),
     path('api/profiles/', views.ProfileList.as_view()),
-    pth('api/projects/', views.ProjectList.as_view()),
+    path('api/projects/', views.ProjectList.as_view()),
 ]
 
 if settings.DEBUG:

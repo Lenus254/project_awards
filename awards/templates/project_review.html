@@ -25,14 +25,19 @@
         <div class="col-md-4">Content <span class="badge badge-pill badge-danger">{{single_project.content}}</span></div>
       </div>
       <h3 style="margin:20px;">Average Score <span class="badge badge-primary">{{average_score}}</span></h3>
-      <a href="" class="btn btn-success btn-rounded btn-block" data-toggle="modal"
-        data-target="#{{single_project.id}}">Vote</a>
+      <!-- <a href="" class="btn btn-success btn-rounded btn-block" data-toggle="modal"
+        data-target="#{{single_project.id}}">Vote</a> -->
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-md" id="{{single_project.id}}" tabindex="-1" role="dialog" aria-labelledby="projectTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project_id">
+          Rate This Project
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="project_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title text-center" id="projectTitle">Rate Project</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Rate project</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

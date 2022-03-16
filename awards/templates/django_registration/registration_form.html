@@ -1,4 +1,4 @@
-{%extends "registration/base.html"%}
+{%extends "base.html"%}
 {% load bootstrap4 %}
 {% block content %}
 <div class="container">
@@ -10,10 +10,10 @@
       {% endif %}
 <div class="card mt-5">
         <div class="card-header">
-          <h3>Register</h3>
+          <h3>Register here</h3>
         </div>
         <div class="card-body">
-          <form  action="/accounts/register/" method="post">
+          <form  action="" method="post">
             {% csrf_token %}
             {% bootstrap_form form %}
             <div class="form-group">
@@ -21,7 +21,7 @@
             </div>
             <input type="hidden" name="next" value="{{next}}">
           </form>
- <p class="mt-5">Already Have an Account, <a href="/accounts/login/" class="text-primary">Login</a></p>
+ <p class="mt-5">Already Have an Account,<a href="{% url 'login' %}" class="text-primary">Login</a></p>
         </div>
       </div>
     </div>

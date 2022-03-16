@@ -11,8 +11,8 @@ urlpatterns=[
     path('search/',views.search_project, name='search_results'),
     path('new/project',views.new_project,name='new-project'),
     path('profile/',views.profile,name='profile'),
-    # url(r'^new_profile/$',views.new_profile,name = 'new_profile'),
-    # url(r'^edit/profile/$',views.profile_edit,name = 'edit_profile'),
+    path('new_profile/',views.new_profile,name = 'new_profile'),
+    path('edit/profile/',views.profile_edit,name = 'edit_profile'),
     # url(r'^api/profile/$', views.ProfileList.as_view()),
     # url(r'^api/projects/$', views.ProjectList.as_view()),
 ]
